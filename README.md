@@ -1,93 +1,179 @@
-# newnoa-maas-github
+<p align="center">
+  <a href="https://newnoa.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/newnoa-logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="./assets/newnoa-logo-light.svg">
+      <img src="./assets/newnoa-logo-light.svg" alt="NewNoa Logo" width="384" height="128">
+    </picture>
+  </a>
+</p>
 
+<h1 align="center">MaaS · Model as a Service</h1>
 
+<p align="center"><strong>模型即服务</strong></p>
 
-## Getting started
+<h3 align="center">让你随时随地用上自己的模型</h3>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+<p align="center">
+  连接家中的模型与算力，远程使用、分享给朋友，也能接入日常应用。
+</p>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+<p align="center">
+  <strong>🏠 远程连接 · 🎁 公益模型 · 🤝 授权分享 · 🔌 协议兼容</strong>
+</p>
 
-## Add your files
+<h3 align="center">🌐 官方网站：<a href="https://newnoa.com">newnoa.com</a></h3>
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+<p align="center">
+  <strong>简体中文</strong> | <a href="./README_en.md">English</a>
+</p>
 
-```
-cd existing_repo
-git remote add origin https://gitlab.newnoa.com/newnoa/newnoa-maas-github.git
-git branch -M main
-git push -uf origin main
-```
+<p align="center">
+  <a href="#introduction">项目介绍</a> ·
+  <a href="#scenarios">适合哪些场景</a> ·
+  <a href="#capabilities">核心能力</a> ·
+  <a href="#getting-started">如何开始</a> ·
+  <a href="#usage-notes">使用说明</a> ·
+  <a href="#open-source">开源范围</a> ·
+  <a href="#roadmap">未来规划</a> ·
+  <a href="#acknowledgments">致谢</a>
+</p>
 
-## Integrate with your tools
+---
 
-* [Set up project integrations](https://gitlab.newnoa.com/newnoa/newnoa-maas-github/-/settings/integrations)
+<a id="introduction"></a>
 
-## Collaborate with your team
+## ✨ 项目介绍
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+你可能已经在家里的显卡主机或工作站上部署了大模型，也调好了喜欢的微调版本、量化方案和推理配置。
 
-## Test and Deploy
+但出了家门，想继续使用它，却被没有公网 IP、复杂的网络配置和额外的服务器费用拦住了。
 
-Use the built-in continuous integration in GitLab.
+> **NewNoa，让模型走出局域网，让已有算力发挥更多价值。**
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+模型继续运行在你的设备上。通过 NewNoa，你可以远程调用自己的模型，授权给朋友、同事和合作伙伴使用，也可以把模型接入支持兼容接口的工具、脚本和应用。
 
-***
+没有自己的显卡主机，也可以从公益模型开始。NewNoa 长期提供公益小模型，并提供每日可领取的免费积分额度，降低个人日常使用模型的成本。
 
-# Editing this README
+<a id="scenarios"></a>
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## 🎯 适合哪些场景
 
-## Suggestions for a good README
+| 你的需求 | NewNoa 能带来什么 |
+| --- | --- |
+| 外出时也想使用家里的模型 | 在没有公网 IP 的情况下连接自有模型服务 |
+| 想使用自己或他人微调、量化的模型 | 按需选择模型版本、量化方案和推理配置 |
+| 自己部署的模型很快，希望充分利用 | 将已经优化好的提示词处理速度（Prefill）和生成速度（Decode）用于远程调用 |
+| 简单任务不想每次都调用大模型 | 根据任务选择 4B、9B，甚至不足 1B 的小模型，减少不必要的计算和开销 |
+| 需要对话之外的专用模型 | 面向语音识别（ASR）、决策判断、推荐等专用推理场景 |
+| 想让亲朋好友共同使用模型 | 授权分享，并了解相应的调用情况和用量 |
+| 想把模型接入自动化和智能设备 | 通过服务模式，为具备模型调用能力的程序和设备提供模型接口 |
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+<a id="capabilities"></a>
 
-## Name
-Choose a self-explaining name for your project.
+## 🧩 核心能力
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### 🏠 远程连接自己的模型
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+NewNoa 提供免费使用方式，帮助你在没有公网 IP 的情况下远程访问自有模型，无需为了这一用途另外租用一台公网服务器。
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+只要部署模型的主机保持开机、联网，模型服务正常运行，就可以通过 NewNoa 从外部访问。
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### 🎁 公益小模型与每日免费积分
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+不是每个任务都需要庞大的模型。分类、决策、推荐、语音识别和简单文本处理等场景，可以根据实际需求选择合适的小模型。
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+NewNoa 长期提供公益小模型，并提供每日可领取的免费积分额度，让更多个人用户能够低成本使用 AI。具体额度和可用模型以平台规则为准。
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### 🤝 分享模型，让闲置算力发挥作用
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+你可以将自己的模型授权给朋友、同事和合作伙伴使用，并查看分享后的调用记录与用量。
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+如果愿意向更多人开放，也可以申请公开模型。通过审核并开放服务后，可以按照平台规则获得积分回报。
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### 🔌 接入工具、应用与智能设备
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+NewNoa 提供 OpenAI、Anthropic 兼容接口，减少接入现有工具和应用时的适配工作。在支持的接口与模型能力范围内，无需自行搭建额外的协议转换服务。
 
-## License
-For open source projects, say how it is licensed.
+通过服务模式，局域网内具备模型调用能力的智能家电、自动化程序和其他应用，也可以接入模型。调用记录可以帮助你了解它们向模型发送了什么请求、模型返回了什么，以及消耗了多少资源。
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### 📊 调用记录与用量留存
+
+NewNoa 可以帮助你保存调用记录、统计用量，并支持以下数据库：
+
+**SQLite · PostgreSQL · MySQL · MongoDB**
+
+需要云端保存和同步时，也可以选择相应的付费服务。记录保留期限按所选存储方式和服务方案执行。
+
+### 🌐 根据网络环境选择连接路径
+
+NewNoa 结合 FRP 中继与基于 EasyTier 的 STUN / NAT 穿透能力，通过 Go Server 节点的延迟检测选择合适的连接路径。
+
+能够直连时使用直连，无法直连时通过中继访问。实际连接效果取决于双方网络环境；中继带宽和并发额度按服务方案执行。
+
+<a id="getting-started"></a>
+
+## 🚀 如何开始
+
+1. **准备模型服务。** 在自己的主机或工作站上部署并启动模型，确认它能够正常提供服务。
+2. **通过 NewNoa 接入。** 将自有模型连接到 NewNoa，按需要选择私人使用、授权分享或申请公开。
+3. **开始使用。** 远程调用模型，或将兼容接口接入日常使用的工具和应用。
+
+没有自有模型时，也可以从平台提供的公益模型开始。访问 [newnoa.com](https://newnoa.com) 了解项目与使用入口。
+
+<a id="usage-notes"></a>
+
+## 📌 使用说明
+
+- **自有设备需要保持在线。** NewNoa 提供连接与调用能力，模型推理仍由部署模型的设备完成；实际速度受设备性能、模型配置和网络条件共同影响。
+- **免费使用有明确范围。** 每日公益积分、免费方案的带宽和并发等按平台规则执行；云端存储等增值服务另行收费。
+- **兼容范围以实际支持为准。** 不同模型提供的能力和接口有所不同，不能仅凭协议名称判断所有功能都可互通。
+- **调用记录有保留期限。** SQLite 调用记录固定保留最近 7 天，其他数据库和云端存储按各自规则执行；需要长期留存时，请选择适合的存储方式。
+
+<a id="open-source"></a>
+
+## 📖 开源范围
+
+NewNoa 已开源 **Go Core** 与 **Go Server**，希望与社区一起完善模型连接、网络穿透与服务转发能力。
+
+- **Go Core**：负责本地模型接入、代理转发与连接管理。
+- **Go Server**：负责服务节点侧的模型转发、授权校验与网络连接协作。
+
+具体使用与再分发条件以各组件仓库中的许可证和第三方声明为准。
+
+<a id="roadmap"></a>
+
+## 🗺️ 未来规划
+
+- [ ] 图片生成模型支持
+- [ ] 视频生成模型支持
+- [ ] ComfyUI 工作流支持
+
+以上为后续规划，具体能力和开放时间以实际发布为准。
+
+---
+
+<p align="center">
+  <strong>从自己用，到分享给朋友，再到接入日常应用。</strong><br>
+  让你已经拥有的模型，多一些用武之地。
+</p>
+
+<p align="center">
+  <a href="https://newnoa.com">newnoa.com</a>
+</p>
+
+<a id="acknowledgments"></a>
+
+## 🙏 致谢
+
+NewNoa 的开发受益于开源社区的积累。感谢以下项目的作者、维护者与贡献者，为模型接入、代理服务和网络连接提供了优秀的实现与设计参考。
+
+| 项目 | 致谢说明 |
+| --- | --- |
+| [CC Switch](https://github.com/farion1231/cc-switch) | 为模型服务配置、接入管理与使用体验提供参考。 |
+| [Magpie](https://github.com/yetone/magpie) | 为模型代理、流式响应处理与连接可靠性等设计提供参考。 |
+| [LiteLLM](https://github.com/BerriAI/litellm) | 为多模型服务接入、协议适配与用量处理提供研究和设计参考。 |
+| [gofrp / FRP](https://github.com/fatedier/frp) | 为内网穿透与中继连接提供基础能力。 |
+| [EasyTier](https://github.com/EasyTier/EasyTier) | 为 NAT 穿透、点对点连接与虚拟网络提供基础能力。 |
+
+感谢每一位推动开源发展的贡献者。各项目的名称与代码权利归原权利人所有，实际使用或再分发的第三方组件遵循各自许可证。

@@ -30,7 +30,7 @@
   <a href="#introduction">Introduction</a> ·
   <a href="#scenarios">Use cases</a> ·
   <a href="#capabilities">Capabilities</a> ·
-  <a href="#getting-started">Getting started</a> ·
+  <a href="#getting-started">Quick start</a> ·
   <a href="#usage-notes">Usage notes</a> ·
   <a href="#open-source">Open source</a> ·
   <a href="#roadmap">Roadmap</a> ·
@@ -111,13 +111,39 @@ Direct connections are used when possible, with relaying available when a direct
 
 <a id="getting-started"></a>
 
-## 🚀 Getting started
+## 🚀 Quick start
 
-1. **Prepare a model service.** Deploy and start a model on your own PC or workstation, and confirm that it works.
-2. **Connect through NewNoa.** Connect your model to NewNoa for private use, authorized sharing, or an application for public access.
-3. **Start using it.** Call the model remotely or connect its compatible API to your everyday tools and applications.
+### 💻 Desktop client
 
-If you do not have your own model, start with the platform's community models. Visit [newnoa.com](https://newnoa.com) to learn more and find the available entry points.
+Download and install the client to get started out of the box.
+
+👉 [Download the client from Releases](https://github.com/)
+
+### 🐳 Service mode · Docker
+
+With Docker installed, start service mode using:
+
+```bash
+docker run -d \
+  --name newnoa-maas \
+  --restart unless-stopped \
+  --add-host host.docker.internal:host-gateway \
+  -p 6060:6060 \
+  -p 18222:18222 \
+  -v newnoa-config:/home/newnoa \
+  -v /yourpath:/data \
+  newnoa/newnoa-maas-docker:latest
+```
+
+Open **`http://localhost:6060`** in your browser. To connect from another device, replace `localhost` with the Docker host's LAN IP address.
+
+- **Web interface: `6060`**; **model API proxy: `18222`**. To call models through the published port, enable LAN access for the proxy in the web interface and use the host address.
+- Replace **`/yourpath`** with your actual data directory and ensure that container user **UID 1000** can read and write it. Call records and exports are stored in `/data`; configuration and login state persist in the `newnoa-config` volume.
+- For models running on the Docker host, use **`host.docker.internal`** to reach the host service. The command above includes the required host mapping.
+
+> 📌 The Releases link is a placeholder. Image availability is subject to actual publication; official download links and deployment documentation will be added later.
+
+If you do not have your own model, start with the platform's community models. Visit [newnoa.com](https://newnoa.com) to learn more.
 
 <a id="usage-notes"></a>
 

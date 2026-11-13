@@ -32,7 +32,7 @@
   <a href="#introduction">项目介绍</a> ·
   <a href="#scenarios">适合哪些场景</a> ·
   <a href="#capabilities">核心能力</a> ·
-  <a href="#getting-started">如何开始</a> ·
+  <a href="#getting-started">快速使用</a> ·
   <a href="#usage-notes">使用说明</a> ·
   <a href="#open-source">开源范围</a> ·
   <a href="#roadmap">未来规划</a> ·
@@ -113,13 +113,39 @@ NewNoa 结合 FRP 中继与基于 EasyTier 的 STUN / NAT 穿透能力，通过 
 
 <a id="getting-started"></a>
 
-## 🚀 如何开始
+## 🚀 快速使用
 
-1. **准备模型服务。** 在自己的主机或工作站上部署并启动模型，确认它能够正常提供服务。
-2. **通过 NewNoa 接入。** 将自有模型连接到 NewNoa，按需要选择私人使用、授权分享或申请公开。
-3. **开始使用。** 远程调用模型，或将兼容接口接入日常使用的工具和应用。
+### 💻 客户端
 
-没有自有模型时，也可以从平台提供的公益模型开始。访问 [newnoa.com](https://newnoa.com) 了解项目与使用入口。
+开箱即用，下载并安装客户端即可开始使用。
+
+👉 [前往 Releases 下载客户端](https://github.com/)
+
+### 🐳 服务模式 · Docker
+
+已安装 Docker 的用户，可以通过以下命令启动服务模式：
+
+```bash
+docker run -d \
+  --name newnoa-maas \
+  --restart unless-stopped \
+  --add-host host.docker.internal:host-gateway \
+  -p 6060:6060 \
+  -p 18222:18222 \
+  -v newnoa-config:/home/newnoa \
+  -v /yourpath:/data \
+  newnoa/newnoa-maas-docker:latest
+```
+
+启动后，在浏览器打开 **`http://localhost:6060`**；从其他设备访问时，将 `localhost` 替换为 Docker 宿主机的局域网 IP。
+
+- **网页入口：`6060`**；**模型 API 代理：`18222`**。如需通过映射端口调用模型，请在页面启用代理的局域网访问，并使用宿主机地址。
+- 将 **`/yourpath`** 替换为实际的数据存储目录，并确保容器用户 **UID 1000** 可以读写。调用记录与导出数据保存在 `/data`，配置与登录状态由 `newnoa-config` 数据卷保留。
+- 模型部署在 Docker 宿主机上时，可使用 **`host.docker.internal`** 访问宿主机服务；上面的命令已加入对应映射。
+
+> 📌 Releases 链接暂为占位；示例镜像以实际发布为准，后续补充正式下载地址与部署文档。
+
+没有自己的模型，也可以从平台提供的公益模型开始。访问 [newnoa.com](https://newnoa.com) 了解更多。
 
 <a id="usage-notes"></a>
 

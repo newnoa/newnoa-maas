@@ -72,24 +72,24 @@ Click a screenshot to view the full-size image.
 <table>
   <tr>
     <td align="center" width="50%">
-      <a href="./assets/screenshots/model-catalog.png"><img src="./assets/screenshots/model-catalog.png" alt="Model catalog" width="100%"></a>
+      <a href="./assets/screenshots/model-catalog-en.jpg"><img src="./assets/screenshots/model-catalog-en.jpg" alt="Model catalog" width="100%"></a>
       <br>
       <strong>Model catalog</strong>
     </td>
     <td align="center" width="50%">
-      <a href="./assets/screenshots/model-testing.png"><img src="./assets/screenshots/model-testing.png" alt="Model testing" width="100%"></a>
+      <a href="./assets/screenshots/model-testing-en.jpg"><img src="./assets/screenshots/model-testing-en.jpg" alt="Model testing" width="100%"></a>
       <br>
       <strong>Model testing</strong>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <a href="./assets/screenshots/publish-model.png"><img src="./assets/screenshots/publish-model.png" alt="Publish a model" width="100%"></a>
+      <a href="./assets/screenshots/publish-model-en.jpg"><img src="./assets/screenshots/publish-model-en.jpg" alt="Publish a model" width="100%"></a>
       <br>
       <strong>Publish a model</strong>
     </td>
     <td align="center" width="50%">
-      <a href="./assets/screenshots/call-records.png"><img src="./assets/screenshots/call-records.png" alt="Call records" width="100%"></a>
+      <a href="./assets/screenshots/call-records-en.jpg"><img src="./assets/screenshots/call-records-en.jpg" alt="Call records" width="100%"></a>
       <br>
       <strong>Call records</strong>
     </td>

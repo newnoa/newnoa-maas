@@ -14,6 +14,12 @@
 
 <p align="center"><strong>模型即服务</strong></p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/version-v0.1.87-blue?style=flat" alt="version v0.1.87">
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-999999?style=flat" alt="platform Windows | macOS | Linux">
+  <img src="https://img.shields.io/badge/built%20with-Electron-orange?style=flat" alt="built with Electron">
+</p>
+
 <h3 align="center">让你随时随地用上自己的模型</h3>
 
 <p align="center">

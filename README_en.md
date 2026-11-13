@@ -140,6 +140,8 @@ NewNoa can save call records and track usage with the following databases:
 
 Paid cloud storage and synchronization options are also available. Retention periods depend on the storage method and service plan you choose.
 
+**You control your call data.** NewNoa stores your call data (request and response content) in encrypted form only after you enable cloud storage and explicitly authorize it. If cloud storage is disabled or you have not given authorization, NewNoa does not save this content in the platform cloud. Local call records are managed through the storage option you choose.
+
 ### Choose a connection path for your network
 
 NewNoa combines FRP relaying with EasyTier-based STUN / NAT traversal, using Go Server latency checks to select a suitable connection path.

@@ -30,6 +30,7 @@
 
 <p align="center">
   <a href="#introduction">Introduction</a> ·
+<a href="#screenshots">Screenshots</a> ·
   <a href="#scenarios">Use cases</a> ·
   <a href="#capabilities">Capabilities</a> ·
   <a href="#getting-started">Quick start</a> ·
@@ -55,6 +56,39 @@ But when you leave home, the lack of a public IP address, complicated network co
 Your models keep running on your own devices. With NewNoa, you can access them remotely, authorize friends and colleagues to use them, and connect them to tools, scripts, and applications that support compatible APIs.
 
 You can also get started without a GPU machine of your own. NewNoa offers community small models and a daily allowance of free credits to help reduce the cost of personal AI use.
+
+<a id="screenshots"></a>
+
+## Screenshots
+
+Click a screenshot to view the full-size image.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/model-catalog.png"><img src="./assets/screenshots/model-catalog.png" alt="Model catalog" width="100%"></a>
+      <br>
+      <strong>Model catalog</strong>
+    </td>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/model-testing.png"><img src="./assets/screenshots/model-testing.png" alt="Model testing" width="100%"></a>
+      <br>
+      <strong>Model testing</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/publish-model.png"><img src="./assets/screenshots/publish-model.png" alt="Publish a model" width="100%"></a>
+      <br>
+      <strong>Publish a model</strong>
+    </td>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/call-records.png"><img src="./assets/screenshots/call-records.png" alt="Call records" width="100%"></a>
+      <br>
+      <strong>Call records</strong>
+    </td>
+  </tr>
+</table>
 
 <a id="scenarios"></a>
 

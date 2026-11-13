@@ -32,6 +32,7 @@
 
 <p align="center">
   <a href="#introduction">项目介绍</a> ·
+<a href="#screenshots">界面预览</a> ·
   <a href="#scenarios">适合哪些场景</a> ·
   <a href="#capabilities">核心能力</a> ·
   <a href="#getting-started">快速使用</a> ·
@@ -57,6 +58,39 @@
 模型继续运行在你的设备上。通过 NewNoa，你可以远程调用自己的模型，授权给朋友、同事和合作伙伴使用，也可以把模型接入支持兼容接口的工具、脚本和应用。
 
 没有自己的显卡主机，也可以从公益模型开始。NewNoa 长期提供公益小模型，并提供每日可领取的免费积分额度，降低个人日常使用模型的成本。
+
+<a id="screenshots"></a>
+
+## 界面预览
+
+点击截图可查看原图。
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/model-catalog.png"><img src="./assets/screenshots/model-catalog.png" alt="模型大厅" width="100%"></a>
+      <br>
+      <strong>模型大厅</strong>
+    </td>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/model-testing.png"><img src="./assets/screenshots/model-testing.png" alt="模型测试" width="100%"></a>
+      <br>
+      <strong>模型测试</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/publish-model.png"><img src="./assets/screenshots/publish-model.png" alt="发布模型" width="100%"></a>
+      <br>
+      <strong>发布模型</strong>
+    </td>
+    <td align="center" width="50%">
+      <a href="./assets/screenshots/call-records.png"><img src="./assets/screenshots/call-records.png" alt="调用记录" width="100%"></a>
+      <br>
+      <strong>调用记录</strong>
+    </td>
+  </tr>
+</table>
 
 <a id="scenarios"></a>
 

@@ -233,7 +233,7 @@ NewNoa 以公司主体运营，目前由一人独立开发和维护。我们希�
 
 如果你是愿意提供**公益模型支持**的个人、团队或机构，欢迎联系我们，一起让更多模型与算力服务于有需要的人。
 
-**微信（WeChat）：`newnoa`**
+**微信（WeChat）：`newnoa`** · **邮箱：<newnoa@newnoa.com>**
 
 <a id="acknowledgments"></a>
 

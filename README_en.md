@@ -231,7 +231,7 @@ NewNoa is operated through a company and is currently developed and maintained b
 
 If you are an individual, team, or organization willing to **support our community model offering**, we would love to hear from you. Together, we can make more models and compute available to people who need them.
 
-**WeChat: `newnoa`**
+**WeChat: `newnoa`** · **Email: <newnoa@newnoa.com>**
 
 <a id="acknowledgments"></a>
 

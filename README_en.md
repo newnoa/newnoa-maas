@@ -202,6 +202,8 @@ NewNoa has open-sourced **Go Core** and **Go Server** to work with the community
 - **Go Core** handles local model access, proxy forwarding, and connection management.
 - **Go Server** handles model forwarding, authorization checks, and network connection coordination on service nodes.
 
+This repository is licensed under the [GNU Affero General Public License v3.0 (AGPL-3.0-only)](./LICENSE). Third-party components remain subject to their respective licenses.
+
 Use and redistribution are subject to the licenses and third-party notices in each component's repository.
 
 <a id="roadmap"></a>

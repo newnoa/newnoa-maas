@@ -204,6 +204,8 @@ NewNoa 已开源 **Go Core** 与 **Go Server**，希望与社区一起完善模�
 - **Go Core**：负责本地模型接入、代理转发与连接管理。
 - **Go Server**：负责服务节点侧的模型转发、授权校验与网络连接协作。
 
+本仓库采用 [GNU Affero General Public License v3.0（AGPL-3.0-only）](./LICENSE) 授权。第三方组件仍遵循各自的许可证。
+
 具体使用与再分发条件以各组件仓库中的许可证和第三方声明为准。
 
 <a id="roadmap"></a>

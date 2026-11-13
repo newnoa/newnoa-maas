@@ -10,7 +10,7 @@
 
 ---
 
-<h1 align="center">MaaS · Model as a Service</h1>
+<h3 align="center">MaaS · Model as a Service</h3>
 
 <p align="center"><strong>模型即服务</strong></p>
 
@@ -174,7 +174,7 @@ docker run -d \
   -p 6060:6060 \
   -p 18222:18222 \
   -v /yourpath:/data \
-  newnoa/newnoa-maas-docker:latest
+  newnoa/newnoa-maas:latest
 ```
 
 启动后，在浏览器打开 **`http://localhost:6060`**；从其他设备访问时，将 `localhost` 替换为 Docker 宿主机的局域网 IP。
@@ -221,10 +221,6 @@ NewNoa 已开源 **Go Core** 与 **Go Server**，希望与社区一起完善模�
 <p align="center">
   <strong>从自己用，到分享给朋友，再到接入日常应用。</strong><br>
   让你已经拥有的模型，多一些用武之地。
-</p>
-
-<p align="center">
-  <a href="https://newnoa.com">newnoa.com</a>
 </p>
 
 <a id="contact"></a>

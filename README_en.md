@@ -10,7 +10,7 @@
 
 ---
 
-<h1 align="center">MaaS · Model as a Service</h1>
+<h3 align="center">MaaS · Model as a Service</h3>
 
 <h3 align="center">Use your own models, wherever you are</h3>
 
@@ -172,7 +172,7 @@ docker run -d \
   -p 6060:6060 \
   -p 18222:18222 \
   -v /yourpath:/data \
-  newnoa/newnoa-maas-docker:latest
+  newnoa/newnoa-maas:latest
 ```
 
 Open **`http://localhost:6060`** in your browser. To connect from another device, replace `localhost` with the Docker host's LAN IP address.
@@ -219,10 +219,6 @@ These are planned capabilities. Availability and release dates depend on actual 
 <p align="center">
   <strong>Use your models yourself, share them with friends, and connect them to everyday applications.</strong><br>
   Put the models you already own to more uses.
-</p>
-
-<p align="center">
-  <a href="https://newnoa.com">newnoa.com</a>
 </p>
 
 <a id="contact"></a>

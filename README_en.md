@@ -44,7 +44,7 @@
 
 <a id="introduction"></a>
 
-## Introduction
+## ✨ Introduction
 
 You may already run a language model on a GPU PC or workstation at home, with the fine-tuned version, quantization, and inference settings you prefer.
 
@@ -114,7 +114,7 @@ Direct connections are used when possible, with relaying available when a direct
 
 <a id="getting-started"></a>
 
-## Quick start
+## 🚀 Quick start
 
 ### Desktop client
 
@@ -191,7 +191,7 @@ These are planned capabilities. Availability and release dates depend on actual 
 
 <a id="contact"></a>
 
-## Contact us
+## 💬 Contact us
 
 NewNoa is operated through a company and is currently developed and maintained by one person. We aim to keep offering community models so that more people can use AI at a lower cost.
 
@@ -201,7 +201,7 @@ If you are an individual, team, or organization willing to **support our communi
 
 <a id="acknowledgments"></a>
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 NewNoa benefits from the work of the open-source community. We thank the authors, maintainers, and contributors of the following projects for their implementations and design references in model access, proxy services, and networking.
 

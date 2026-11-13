@@ -8,6 +8,8 @@
   </a>
 </p>
 
+---
+
 <h1 align="center">MaaS · Model as a Service</h1>
 
 <p align="center"><strong>模型即服务</strong></p>
@@ -127,12 +129,8 @@ NewNoa 结合 FRP 中继与基于 EasyTier 的 STUN / NAT 穿透能力，通过 
 
 ```bash
 docker run -d \
-  --name newnoa-maas \
-  --restart unless-stopped \
-  --add-host host.docker.internal:host-gateway \
   -p 6060:6060 \
   -p 18222:18222 \
-  -v newnoa-config:/home/newnoa \
   -v /yourpath:/data \
   newnoa/newnoa-maas-docker:latest
 ```
@@ -140,8 +138,7 @@ docker run -d \
 启动后，在浏览器打开 **`http://localhost:6060`**；从其他设备访问时，将 `localhost` 替换为 Docker 宿主机的局域网 IP。
 
 - **网页入口：`6060`**；**模型 API 代理：`18222`**。如需通过映射端口调用模型，请在页面启用代理的局域网访问，并使用宿主机地址。
-- 将 **`/yourpath`** 替换为实际的数据存储目录，并确保容器用户 **UID 1000** 可以读写。调用记录与导出数据保存在 `/data`，配置与登录状态由 `newnoa-config` 数据卷保留。
-- 模型部署在 Docker 宿主机上时，可使用 **`host.docker.internal`** 访问宿主机服务；上面的命令已加入对应映射。
+- 将 **`/yourpath`** 替换为实际的数据存储目录，并确保容器用户 **UID 1000** 可以读写。调用记录与导出数据保存在 `/data`。
 
 > 📌 Releases 链接暂为占位；示例镜像以实际发布为准，后续补充正式下载地址与部署文档。
 

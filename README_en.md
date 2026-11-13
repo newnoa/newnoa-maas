@@ -8,6 +8,8 @@
   </a>
 </p>
 
+---
+
 <h1 align="center">MaaS · Model as a Service</h1>
 
 <h3 align="center">Use your own models, wherever you are</h3>
@@ -125,12 +127,8 @@ With Docker installed, start service mode using:
 
 ```bash
 docker run -d \
-  --name newnoa-maas \
-  --restart unless-stopped \
-  --add-host host.docker.internal:host-gateway \
   -p 6060:6060 \
   -p 18222:18222 \
-  -v newnoa-config:/home/newnoa \
   -v /yourpath:/data \
   newnoa/newnoa-maas-docker:latest
 ```
@@ -138,8 +136,7 @@ docker run -d \
 Open **`http://localhost:6060`** in your browser. To connect from another device, replace `localhost` with the Docker host's LAN IP address.
 
 - **Web interface: `6060`**; **model API proxy: `18222`**. To call models through the published port, enable LAN access for the proxy in the web interface and use the host address.
-- Replace **`/yourpath`** with your actual data directory and ensure that container user **UID 1000** can read and write it. Call records and exports are stored in `/data`; configuration and login state persist in the `newnoa-config` volume.
-- For models running on the Docker host, use **`host.docker.internal`** to reach the host service. The command above includes the required host mapping.
+- Replace **`/yourpath`** with your actual data directory and ensure that container user **UID 1000** can read and write it. Call records and exports are stored in `/data`.
 
 > 📌 The Releases link is a placeholder. Image availability is subject to actual publication; official download links and deployment documentation will be added later.
 

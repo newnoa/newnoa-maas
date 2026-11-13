@@ -38,6 +38,7 @@
   <a href="#usage-notes">使用说明</a> ·
   <a href="#open-source">开源范围</a> ·
   <a href="#roadmap">未来规划</a> ·
+  <a href="#contact">联系我们</a> ·
   <a href="#acknowledgments">致谢</a>
 </p>
 
@@ -187,6 +188,16 @@ NewNoa 已开源 **Go Core** 与 **Go Server**，希望与社区一起完善模�
 <p align="center">
   <a href="https://newnoa.com">newnoa.com</a>
 </p>
+
+<a id="contact"></a>
+
+## 💬 联系我们
+
+NewNoa 以公司主体运营，目前由一人独立开发和维护。我们希望通过持续提供公益模型，让更多个人用户以更低的成本使用 AI。
+
+如果你是愿意提供**公益模型支持**的个人、团队或机构，欢迎联系我们，一起让更多模型与算力服务于有需要的人。
+
+📮 **微信（WeChat）：`newnoa`**
 
 <a id="acknowledgments"></a>
 

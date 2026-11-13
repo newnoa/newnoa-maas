@@ -36,6 +36,7 @@
   <a href="#usage-notes">Usage notes</a> ·
   <a href="#open-source">Open source</a> ·
   <a href="#roadmap">Roadmap</a> ·
+  <a href="#contact">Contact us</a> ·
   <a href="#acknowledgments">Acknowledgments</a>
 </p>
 
@@ -185,6 +186,16 @@ These are planned capabilities. Availability and release dates depend on actual 
 <p align="center">
   <a href="https://newnoa.com">newnoa.com</a>
 </p>
+
+<a id="contact"></a>
+
+## 💬 Contact us
+
+NewNoa is operated through a company and is currently developed and maintained by one person. We aim to keep offering community models so that more people can use AI at a lower cost.
+
+If you are an individual, team, or organization willing to **support our community model offering**, we would love to hear from you. Together, we can make more models and compute available to people who need them.
+
+📮 **WeChat: `newnoa`**
 
 <a id="acknowledgments"></a>
 

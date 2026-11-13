@@ -119,6 +119,9 @@ Direct connections are used when possible, with relaying available when a direct
 
 Download and install the client to get started out of the box.
 
+- **Standard edition**: For users in mainland China, with access to Chinese models and selected open-source models.
+- **International edition**: Supports models from around the world.
+
 👉 [Download the client from Releases](https://github.com/)
 
 ### 🐳 Service mode · Docker

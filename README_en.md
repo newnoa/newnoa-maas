@@ -67,7 +67,7 @@ You can also get started without a GPU machine of your own. NewNoa offers commun
 
 ## Screenshots
 
-Click a screenshot to view the full-size image.
+Click a screenshot to view the full-size image. These are desktop client feature examples; the website workspace does not offer model publishing or call records. The unified installer lets you select Mainland China or International on the login page. Language is selected separately; model access and service availability depend on your edition and account permissions.
 
 <table>
   <tr>
@@ -160,14 +160,20 @@ Direct connections are used when possible, with relaying available when a direct
 
 ### Desktop client
 
-Download and install the client to get started out of the box.
+Download one International desktop installer. A separate Mainland China installer is no longer needed:
 
-- **Standard edition**: For users in mainland China, with access to Chinese models only.
-- **International edition**: For users outside mainland China, with access to models from around the world and the platform's full set of currently released features.
+1. Open the login page and select **Mainland China** or **International** from the edition dropdown. The first visit defaults to **International**; later visits remember your last manual selection.
+2. Sign in with your registered email and password. **Mainland China and International share accounts; you can sign in to both with the same account.**
+3. Use models allowed by the selected edition and your account permissions. To switch editions, sign out and choose the other edition on the login page.
 
-The international edition determines service availability by the geographic location of the accessing IP address and does not provide service to mainland China.
+- **Mainland China**: For users in mainland China, with access to Chinese models permitted for that edition.
+- **International**: For users outside mainland China, with access to global models and released features permitted for that edition.
 
-[Download the client from Releases](https://github.com/)
+International login availability is checked using the geographic location of the accessing IP address. Logins from mainland China are restricted; selecting International does not bypass server enforcement. This regional rule applies to login only, not registration. Registration availability is controlled by a separate platform setting.
+
+You can also open the [website workspace](https://www.newnoa.com/login) with the same edition selection, defaults and account. It requires no installation. Use the desktop client for local capabilities such as model publishing and the local proxy.
+
+[Download the unified client from Releases](https://github.com/newnoa/newnoa-maas/releases)
 
 ### Service mode · Docker
 
@@ -186,7 +192,7 @@ Open **`http://localhost:6060`** in your browser. To connect from another device
 - **Web interface: `6060`**; **model API proxy: `18222`**. To call models through the published port, enable LAN access for the proxy in the web interface and use the host address.
 - Replace **`/yourpath`** with your actual data directory and ensure that container user **UID 1000** can read and write it. Call records and exports are stored in `/data`.
 
-> The Releases link is a placeholder. Image availability is subject to actual publication; official download links and deployment documentation will be added later.
+> Available platforms, architectures and installers depend on the assets actually published in Releases. Image availability and versions are subject to actual publication. Docker service mode uses its deployment-configured API environment; the login page does not change the container control environment.
 
 If you do not have your own model, start with the platform's community models. Visit [newnoa.com](https://newnoa.com) to learn more.
 

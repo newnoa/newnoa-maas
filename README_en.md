@@ -131,6 +131,7 @@ Click a screenshot to view the full-size image. These are desktop client feature
 | Leaving home after starting a task on your computer | Continue the same agent session from your phone, with the existing conversation and project context |
 | On a laptop, with your development environment on another workstation | Connect to a supported agent on the target computer and move the task forward in the environment already set up there |
 | Working with several computers | Choose the target computer and session for each project, keeping tasks running on their respective hosts |
+| Reduce token usage in long conversations and coding tasks | Enable compression in the client’s Proxy Settings to trim redundant context and reduce token consumption |
 
 <a id="capabilities"></a>
 
@@ -159,6 +160,10 @@ You can also apply to make a model publicly available. Once approved and serving
 NewNoa provides OpenAI-compatible and Anthropic-compatible APIs to reduce integration work. Within the supported API and model capabilities, you do not need to set up a separate protocol translation service yourself.
 
 Service mode also lets applications, automation programs, and smart devices on your local network connect to models, provided they can make model API calls. Call records help you understand what they sent to the model, what the model returned, and how many resources each call used.
+
+### Client-side token compression for more efficient conversations and Vibe Coding
+
+Enable compression in the NewNoa client’s **Proxy Settings** to compress context, trim redundant content, and reduce token consumption, making long conversations and Vibe Coding more economical.
 
 ### Keep call records and usage data
 
@@ -277,6 +282,8 @@ NewNoa benefits from the work of the open-source community. We thank the authors
 | --- | --- |
 | [CC Switch](https://github.com/farion1231/cc-switch) | References for model service configuration, access management, and usability. |
 | [Magpie](https://github.com/yetone/magpie) | References for model proxies, streaming response handling, and connection reliability. |
+| [Orca](https://github.com/stablyai/orca) | Research and design references for remote coding agents, cross-device sessions, and task collaboration. |
+| [Headroom](https://github.com/headroomlabs-ai/headroom) | Research and design references for context compression, token optimization, and reducing redundant model input. |
 | [LiteLLM](https://github.com/BerriAI/litellm) | Research and design references for model service integration, protocol adaptation, and usage handling. |
 | [gofrp / FRP](https://github.com/fatedier/frp) | Foundational capabilities for network traversal and relayed connections. |
 | [EasyTier](https://github.com/EasyTier/EasyTier) | Foundational capabilities for NAT traversal, peer-to-peer connectivity, and virtual networking. |

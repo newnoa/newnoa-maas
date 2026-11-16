@@ -29,7 +29,7 @@
 </p>
 
 <p align="center">
-  <strong>🚀 In development: Vibe Coding from your phone · Continue the same agent session across computers</strong>
+  <strong>🚀 Vibe Coding from your phone · Continue the same agent session across computers</strong>
 </p>
 
 <h3 align="center">🌐 Official website: <a href="https://newnoa.com">newnoa.com</a></h3>
@@ -39,17 +39,7 @@
 </p>
 
 <p align="center">
-  <a href="#introduction">Introduction</a> ·
-  <a href="#remote-vibe-coding">Remote Vibe Coding (in development)</a> ·
-<a href="#screenshots">Screenshots</a> ·
-  <a href="#scenarios">Use cases</a> ·
-  <a href="#capabilities">Capabilities</a> ·
-  <a href="#getting-started">Quick start</a> ·
-  <a href="#usage-notes">Usage notes</a> ·
-  <a href="#open-source">Open source</a> ·
-  <a href="#roadmap">Roadmap</a> ·
-  <a href="#contact">Contact us</a> ·
-  <a href="#acknowledgments">Acknowledgments</a>
+  <a href="#introduction">About</a> · <a href="#remote-vibe-coding">Vibe Coding</a> · <a href="#screenshots">Preview</a> · <a href="#scenarios">Uses</a> · <a href="#capabilities">Features</a> · <a href="#getting-started">Start</a> · <a href="#usage-notes">Guide</a> · <a href="#open-source">Source</a> · <a href="#roadmap">Roadmap</a> · <a href="#contact">Contact</a> · <a href="#acknowledgments">Thanks</a>
 </p>
 
 ---
@@ -72,33 +62,21 @@ You can also get started without a GPU machine of your own. NewNoa offers commun
 
 ## 🚀 Remote Vibe Coding: connect from your phone, keep your computer coding
 
-> **In development · An interaction prototype is available; real remote agent connections have not shipped.** This section describes the product direction we are working toward, rather than capabilities available in the current download.
-
-An idea comes to you when your computer is out of reach. You are at the office, but your project and development environment are at home. With NewNoa, we want you to keep directing the agent on your project computer from a phone or another computer, and turn those ideas into code.
+An idea comes to you when your computer is out of reach. You are at the office, but your project and development environment are at home. NewNoa lets you keep directing the agent on your project computer from a phone or another computer, and turn those ideas into code.
 
 **You bring your phone. Your computer keeps the project. Describe what you need and put your existing development environment to work.**
 
-### Keep the project moving, wherever you are
-
-| Where you are | The experience we are building |
-| --- | --- |
-| Out and about with only your phone | Open NewNoa on your phone, connect to the coding agent on your home computer, describe a change, read replies, and refine the task as you Vibe Code |
-| At the office, with your project on your home computer | Use NewNoa on your office computer to connect to your home computer with hosting enabled, and ask its agent to edit code and run tests in the original project |
-| Leaving home after starting a task on your computer | Continue the same agent session from your phone, with the existing conversation and project context |
-| On a laptop, with your development environment on another workstation | Connect to a supported agent on the target computer and move the task forward in the environment already set up there |
-| Working with several computers | Choose the target computer and session for each project, keeping tasks running on their respective hosts |
-
 ### Switch devices and keep the conversation going
 
-The planned workflow:
+How it works:
 
 1. **Prepare your project computer.** Enable remote hosting in the NewNoa desktop client, choose a supported Codex / Claude Code executor and project directory, and let NewNoa launch the agent.
 2. **Join from a phone or another computer.** Sign in with the same NewNoa account, select the executor, target computer, and session, and continue describing what you need.
 3. **Keep working on the same project.** Follow progress, add instructions to the current task, and respond to tool approvals. The agent on the project computer performs the code changes and tests.
 
-Planned controls let multiple devices participate in the same session, send immediate additions to a running task, and synchronize tool approvals across devices. The agent keeps its existing permissions, and each approval takes effect only once. The first phase focuses on sessions launched and managed by NewNoa.
+NewNoa lets multiple devices participate in the same session, send immediate additions to a running task, and synchronize tool approvals across devices. The agent keeps its existing permissions, and each approval takes effect only once. The first phase focuses on sessions launched and managed by NewNoa.
 
-**Requirements and status:** The target computer must stay powered on, online, and running NewNoa with remote hosting enabled for the selected agent. This capability is intended for the mobile and desktop clients; the website workspace and Docker service edition do not provide remote agent control. The current prototype demonstrates interactions only. Real CLI integration, cross-device communication, and native background operation still require implementation and verification. Supported platforms and versions will be announced in future release notes.
+**Requirements:** The target computer must stay powered on, online, and running NewNoa with remote hosting enabled for the selected agent. This capability is intended for the mobile and desktop clients; the website workspace and Docker service edition do not provide remote agent control. Supported platforms and versions will be listed in the release notes.
 
 **Step away from your computer without putting your ideas on hold.**
 
@@ -148,6 +126,11 @@ Click a screenshot to view the full-size image. These are desktop client feature
 | Use specialized models beyond chat | Support scenarios such as automatic speech recognition (ASR), decision-making, and recommendations |
 | Share models with friends and colleagues | Authorize access and track the associated calls and usage |
 | Connect automation and smart devices | Use service mode to provide model APIs to programs and devices that can call them |
+| Out and about with only your phone | Open NewNoa on your phone, connect to the coding agent on your home computer, describe a change, read replies, and refine the task as you Vibe Code |
+| At the office, with your project on your home computer | Use NewNoa on your office computer to connect to your home computer with hosting enabled, and ask its agent to edit code and run tests in the original project |
+| Leaving home after starting a task on your computer | Continue the same agent session from your phone, with the existing conversation and project context |
+| On a laptop, with your development environment on another workstation | Connect to a supported agent on the target computer and move the task forward in the environment already set up there |
+| Working with several computers | Choose the target computer and session for each project, keeping tasks running on their respective hosts |
 
 <a id="capabilities"></a>
 
@@ -261,7 +244,6 @@ Use and redistribution are subject to the licenses and third-party notices in ea
 
 ## Roadmap
 
-- [ ] Remote Vibe Coding: connect to a hosted agent from a phone or another computer and continue the same project session (in development)
 - [ ] Image generation model support
 - [ ] Video generation model support
 - [ ] ComfyUI workflow support

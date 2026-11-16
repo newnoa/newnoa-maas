@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <strong>Remote access · Community models · Authorized sharing · Compatible APIs</strong>
+  <strong>Remote models · Remote agents · Community models · Authorized sharing · Compatible APIs</strong>
 </p>
 
 <p align="center">

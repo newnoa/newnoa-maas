@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <strong>远程连接 · 公益模型 · 授权分享 · 协议兼容</strong>
+  <strong>远程模型 · 远程智能体 · 公益模型 · 授权分享 · 协议兼容</strong>
 </p>
 
 <p align="center">

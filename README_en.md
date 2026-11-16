@@ -18,7 +18,7 @@
   <img src="https://img.shields.io/badge/built%20with-Electron-orange?style=flat" alt="built with Electron">
 </p>
 
-<h3 align="center">Use your own models, wherever you are</h3>
+<h3 align="center">Use your own models and agents, wherever you are</h3>
 
 <p align="center">
   Connect the compute, models, and agents on your home computer. Access them remotely, share them with friends, and connect them to all kinds of everyday applications.

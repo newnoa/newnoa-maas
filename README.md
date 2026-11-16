@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/built%20with-Electron-orange?style=flat" alt="built with Electron">
 </p>
 
-<h3 align="center">让你随时随地用上自己的模型</h3>
+<h3 align="center">让你随时随地用上自己的模型与智能体</h3>
 
 <p align="center">
   连接家中的算力、模型与智能体，远程使用、分享给朋友，也能接入各类日常应用。

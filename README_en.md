@@ -21,7 +21,7 @@
 <h3 align="center">Use your own models, wherever you are</h3>
 
 <p align="center">
-  Connect the models and compute you already own. Access them remotely, share them with friends, and use them in everyday applications.
+  Connect the compute, models, and agents on your home computer. Access them remotely, share them with friends, and connect them to all kinds of everyday applications.
 </p>
 
 <p align="center">

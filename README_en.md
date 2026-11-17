@@ -221,7 +221,7 @@ Open **`http://localhost:6060`** in your browser. To connect from another device
 - **Web interface: `6060`**; **model API proxy: `18222`**. To call models through the published port, enable LAN access for the proxy in the web interface and use the host address.
 - Replace **`/yourpath`** with your actual data directory and ensure that container user **UID 1000** can read and write it. Call records and exports are stored in `/data`.
 
-**Feature boundary: Docker service mode provides MaaS functionality only. It does not support agent proxying, agent installation or agent configuration. Port `18222` above is the model API proxy, not an agent proxy endpoint. Use the desktop client or standalone Go Core for agent proxying.**
+**Feature boundary: Docker service mode provides MaaS functionality only. It does not support agent proxying, agent installation or agent configuration. Port `18222` above is the model API proxy, not an agent proxy endpoint. Use the desktop client for agent proxying.**
 
 > Available platforms, architectures and installers depend on the assets actually published in Releases. Image availability and versions are subject to actual publication. Docker service mode uses its deployment-configured API environment; the login page does not change the container control environment.
 

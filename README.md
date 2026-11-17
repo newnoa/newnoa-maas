@@ -41,7 +41,7 @@
 </p>
 
 <p align="center">
-  <a href="#introduction">介绍</a> · <a href="#remote-vibe-coding">Vibe Coding</a> · <a href="#screenshots">预览</a> · <a href="#scenarios">场景</a> · <a href="#capabilities">功能</a> · <a href="#getting-started">入门</a> · <a href="#usage-notes">说明</a> · <a href="#open-source">开源</a> · <a href="#roadmap">规划</a> · <a href="#contact">联系</a> · <a href="#acknowledgments">致谢</a>
+  <a href="#introduction">介绍</a> · <a href="#remote-vibe-coding">Vibe Coding</a> · <a href="#screenshots">预览</a> · <a href="#scenarios">场景</a> · <a href="#capabilities">功能</a> · <a href="#getting-started">快速使用</a> · <a href="#usage-notes">说明</a> · <a href="#open-source">开源</a> · <a href="#roadmap">规划</a> · <a href="#contact">联系</a> · <a href="#acknowledgments">致谢</a>
 </p>
 
 ---

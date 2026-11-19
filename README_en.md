@@ -74,7 +74,7 @@ How it works:
 2. **Join from a phone or another computer.** Sign in with the same NewNoa account, select the executor, target computer, and session, and continue describing what you need.
 3. **Keep working on the same project.** Follow progress, add instructions to the current task, and respond to tool approvals. The agent on the project computer performs the code changes and tests.
 
-**Supported agents:** Codex CLI / Claude Code / Hermes Agent / OpenClaw / Pi Agent
+**Supported agents:** Codex CLI / Claude Code / Hermes Agent / OpenClaw / Pi Agent / OpenCode
 
 NewNoa lets multiple devices participate in the same session, send immediate additions to a running task, and synchronize tool approvals across devices. The agent keeps its existing permissions, and each approval takes effect only once. The first phase focuses on sessions launched and managed by NewNoa.
 

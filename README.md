@@ -76,7 +76,7 @@
 2. **从手机或另一台电脑进入。** 使用同一 NewNoa 账号，选择执行器、目标电脑和会话，继续提出需求。
 3. **围绕同一个项目持续协作。** 查看进度、补充当前任务、处理工具审批；代码修改和测试仍由项目电脑上的智能体完成。
 
-**支持的智能体：** Codex CLI / Claude Code / Hermes Agent / OpenClaw / Pi Agent
+**支持的智能体：** Codex CLI / Claude Code / Hermes Agent / OpenClaw / Pi Agent / OpenCode
 
 NewNoa 支持多个设备同时参与同一会话、新消息立即补充到当前任务，以及工具审批在各端同步。智能体沿用原有权限设置；一次审批只生效一次。首期聚焦由 NewNoa 托管启动的会话。
 

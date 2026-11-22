@@ -1,0 +1,115 @@
+{
+  "video-pair": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "video_pair",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "recommendations": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "recommendations"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "product-ranking": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "product_ranking",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "ranking": {
+            "type": "string",
+            "enum": [
+              "A",
+              "C",
+              "A,C",
+              "C,A"
+            ]
+          }
+        },
+        "required": [
+          "ranking"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "text-answer": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "text_answer",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The complete human-readable final answer to the user, in their language."
+          }
+        },
+        "required": [
+          "answer"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "outdoor-video": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "outdoor_video",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "ranking": {
+            "type": "string",
+            "enum": [
+              "A,C",
+              "C,A"
+            ]
+          }
+        },
+        "required": [
+          "ranking"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

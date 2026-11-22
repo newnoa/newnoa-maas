@@ -44,6 +44,8 @@
 
 ---
 
+![NOA, the NewNoa MaaS mascot, in front of server racks](./assets/newnoa-maas.webp)
+
 <a id="introduction"></a>
 
 ## ✨ Introduction

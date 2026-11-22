@@ -46,6 +46,8 @@
 
 ---
 
+![NewNoa MaaS 吉祥物 NOA 站在服务器机柜前](./assets/newnoa-maas.webp)
+
 <a id="introduction"></a>
 
 ## ✨ 项目介绍

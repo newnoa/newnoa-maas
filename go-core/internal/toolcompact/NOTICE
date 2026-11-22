@@ -1,0 +1,3 @@
+Derived from JuliusBrussee/caveman at a192894723a8f47e7f504c7b5041967ff1f18e55 (Apache-2.0).
+Copyright 2026 Julius Brussee and Caveman contributors.
+NEWNOA modifications: package name and bounded lossless-only integration.

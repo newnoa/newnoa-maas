@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "oracle": {
+    "package": "tiktoken",
+    "version": "0.14.0",
+    "mode": "encode_ordinary"
+  },
+  "cases": [
+    {
+      "id": "chat_interleaved_choices_tools",
+      "protocol": "/v1/chat/completions",
+      "request": "{\"messages\": [{\"role\": \"user\", \"content\": \"hello\"}], \"stream\": true}",
+      "wire": "data: {\"choices\":[{\"index\":0,\"delta\":{\"content\":\"你\"}},{\"index\":1,\"delta\":{\"content\":\"hel\"}}]}\n\ndata: {\"choices\":[{\"index\":0,\"delta\":{\"content\":\"好 👩‍💻\",\"tool_calls\":[{\"index\":0,\"id\":\"t1\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{\\\"q\\\":\"}}]}},{\"index\":1,\"delta\":{\"content\":\"lo\"}}]}\n\ndata: {\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"中文\\\"}\"}}]}}]}\n\ndata: [DONE]\n\n",
+      "lanes": [
+        "你好 👩‍💻",
+        "hello",
+        "lookup",
+        "{\"q\":\"中文\"}"
+      ],
+      "expectedOutputTokens": {
+        "cl100k_base": 16,
+        "o200k_base": 13
+      }
+    },
+    {
+      "id": "chat_reasoning_separate",
+      "protocol": "/v1/chat/completions",
+      "request": "{\"messages\": [{\"role\": \"user\", \"content\": \"hello\"}], \"stream\": true}",
+      "wire": "data: {\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"hel\",\"content\":\"hel\"}}]}\n\ndata: {\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"lo\",\"content\":\"lo\"}}]}\n\ndata: [DONE]\n\n",
+      "lanes": [
+        "hello",
+        "hello"
+      ],
+      "expectedOutputTokens": {
+        "cl100k_base": 2,
+        "o200k_base": 2
+      }
+    },
+    {
+      "id": "responses_text_done_terminal",
+      "protocol": "/v1/responses",
+      "request": "{\"input\": \"hello\", \"stream\": true}",
+      "wire": "data: {\"type\":\"response.created\",\"response\":{\"id\":\"r1\"}}\n\ndata: {\"type\":\"response.output_text.delta\",\"output_index\":0,\"content_index\":0,\"delta\":\"hel\"}\n\ndata: {\"type\":\"response.output_text.delta\",\"output_index\":0,\"content_index\":0,\"delta\":\"lo\"}\n\ndata: {\"type\":\"response.output_text.done\",\"output_index\":0,\"content_index\":0,\"text\":\"hello\"}\n\ndata: {\"type\":\"response.completed\",\"response\":{\"status\":\"completed\",\"output\":[{\"type\":\"message\",\"content\":[{\"type\":\"output_text\",\"text\":\"hello\"}]}]}}\n\n",
+      "lanes": [
+        "hello"
+      ],
+      "expectedOutputTokens": {
+        "cl100k_base": 1,
+        "o200k_base": 1
+      }
+    },
+    {
+      "id": "responses_tools",
+      "protocol": "/v1/responses",
+      "request": "{\"input\": \"hello\", \"stream\": true}",
+      "wire": "data: {\"type\":\"response.output_item.added\",\"output_index\":0,\"item\":{\"type\":\"function_call\",\"name\":\"lookup\",\"arguments\":\"\"}}\n\ndata: {\"type\":\"response.function_call_arguments.delta\",\"output_index\":0,\"delta\":\"{\\\"q\\\":\"}\n\ndata: {\"type\":\"response.function_call_arguments.delta\",\"output_index\":0,\"delta\":\"\\\"中文\\\"}\"}\n\ndata: {\"type\":\"response.function_call_arguments.done\",\"output_index\":0,\"arguments\":\"{\\\"q\\\":\\\"中文\\\"}\"}\n\ndata: {\"type\":\"response.completed\",\"response\":{\"status\":\"completed\",\"output\":[{\"type\":\"function_call\",\"name\":\"lookup\",\"arguments\":\"{\\\"q\\\":\\\"中文\\\"}\"}]}}\n\n",
+      "lanes": [
+        "lookup",
+        "{\"q\":\"中文\"}"
+      ],
+      "expectedOutputTokens": {
+        "cl100k_base": 7,
+        "o200k_base": 6
+      }
+    },
+    {
+      "id": "responses_independent_summary_indices",
+      "protocol": "/v1/responses",
+      "request": "{\"input\": \"hello\", \"stream\": true}",
+      "wire": "data: {\"type\":\"response.reasoning_summary_text.delta\",\"output_index\":0,\"summary_index\":0,\"delta\":\"hel\"}\n\ndata: {\"type\":\"response.reasoning_summary_text.delta\",\"output_index\":0,\"summary_index\":1,\"delta\":\"lo\"}\n\ndata: {\"type\":\"response.completed\",\"response\":{\"status\":\"completed\",\"output\":[]}}\n\n",
+      "lanes": [
+        "hel",
+        "lo"
+      ],
+      "expectedOutputTokens": {
+        "cl100k_base": 2,
+        "o200k_base": 2
+      }
+    },
+    {
+      "id": "messages_thinking_text_tool",
+      "protocol": "/v1/messages",
+      "request": "{\"messages\": [{\"role\": \"user\", \"content\": \"hello\"}], \"stream\": true}",
+      "wire": "data: {\"type\":\"message_start\",\"message\":{\"id\":\"m1\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[]}}\n\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"thinking\",\"thinking\":\"\"}}\n\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"hello\"}}\n\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"signature_delta\",\"signature\":\"not-billable-text\"}}\n\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\ndata: {\"type\":\"content_block_start\",\"index\":1,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\ndata: {\"type\":\"content_block_delta\",\"index\":1,\"delta\":{\"type\":\"text_delta\",\"text\":\"你好\"}}\n\ndata: {\"type\":\"content_block_stop\",\"index\":1}\n\ndata: {\"type\":\"content_block_start\",\"index\":2,\"content_block\":{\"type\":\"tool_use\",\"id\":\"t1\",\"name\":\"lookup\",\"input\":{}}}\n\ndata: {\"type\":\"content_block_delta\",\"index\":2,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"{\\\"q\\\":\\\"x\\\"}\"}}\n\ndata: {\"type\":\"content_block_stop\",\"index\":2}\n\ndata: {\"type\":\"message_stop\"}\n\n",
+      "lanes": [
+        "hello",
+        "你好",
+        "lookup",
+        "{\"q\":\"x\"}"
+      ],
+      "expectedOutputTokens": {
+        "cl100k_base": 9,
+        "o200k_base": 8
+      }
+    },
+    {
+      "id": "chat_json",
+      "protocol": "/v1/chat/completions",
+      "request": "{\"messages\": [{\"role\": \"user\", \"content\": \"hello\"}], \"stream\": false}",
+      "wire": "{\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"你好 👩‍💻\",\"reasoning_content\":\"hello\",\"tool_calls\":[{\"id\":\"t1\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{\\\"q\\\":\\\"x\\\"}\"}}]}}]}",
+      "lanes": [
+        "你好 👩‍💻",
+        "hello",
+        "lookup",
+        "{\"q\":\"x\"}"
+      ],
+      "expectedOutputTokens": {
+        "cl100k_base": 15,
+        "o200k_base": 13
+      }
+    }
+  ]
+}

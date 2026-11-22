@@ -17,7 +17,7 @@ func TestOnlineModelListPublicHTTPAndDNSPolicy(t *testing.T) {
 			t.Fatalf("%s: %v %v", endpoint, u, err)
 		}
 	}
-	for _, endpoint := range []string{"http://127.0.0.1", "http://192.0.2.14", "http://169.254.169.254", "http://[::]", "http://100.64.0.1", "http://[::ffff:127.0.0.1]", "http://[::127.0.0.1]", "http://[fec0::1]", "http://[100::1]", "http://[64:ff9b::a00:1]", "http://example.com?key=secret", "http://u:p@example.com"} {
+	for _, endpoint := range []string{"http://127.0.0.1", "http://10.219.77.14", "http://169.254.169.254", "http://[::]", "http://100.64.0.1", "http://[::ffff:127.0.0.1]", "http://[::127.0.0.1]", "http://[fec0::1]", "http://[100::1]", "http://[64:ff9b::a00:1]", "http://example.com?key=secret", "http://u:p@example.com"} {
 		if _, err := p.endpoint(endpoint); err == nil {
 			t.Fatalf("accepted %s", endpoint)
 		}

@@ -18,7 +18,7 @@ func TestPublicGoServerConfiguration(t *testing.T) {
 	if endpoint, err := parsePublicGoServer(""); endpoint != nil || err != nil {
 		t.Fatal("empty configuration should preserve the default route")
 	}
-	for _, address := range []string{"192.0.2.14:6666", "127.0.0.1:6666", "[fd00::1]:6666", "[::1]:6666"} {
+	for _, address := range []string{"10.219.77.14:6666", "127.0.0.1:6666", "[fd00::1]:6666", "[::1]:6666"} {
 		raw := `{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"` + address + `","transport":"grpc"}`
 		endpoint, err := parsePublicGoServer(raw)
 		if err != nil || endpoint.dialAddress != address {
@@ -29,13 +29,13 @@ func TestPublicGoServerConfiguration(t *testing.T) {
 		`null`, `{}`, `[]`,
 		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"8.8.8.8:6666"}`,
 		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"localhost:6666"}`,
-		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"192.0.2.14:0"}`,
-		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"192.0.2.14:65536"}`,
-		`{"id":"node","address":"http://192.0.2.14:6666","internalAddress":"192.0.2.14:6666"}`,
-		`{"id":"node","address":"https://203.0.113.1:6666/path","internalAddress":"192.0.2.14:6666"}`,
-		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"192.0.2.14:6666","trustedCa":"bad"}`,
-		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"192.0.2.14:6666","transport":"udp"}`,
-		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"192.0.2.14:6666","unknown":true}`,
+		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"10.219.77.14:0"}`,
+		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"10.219.77.14:65536"}`,
+		`{"id":"node","address":"http://10.219.77.14:6666","internalAddress":"10.219.77.14:6666"}`,
+		`{"id":"node","address":"https://203.0.113.1:6666/path","internalAddress":"10.219.77.14:6666"}`,
+		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"10.219.77.14:6666","trustedCa":"bad"}`,
+		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"10.219.77.14:6666","transport":"udp"}`,
+		`{"id":"node","address":"https://203.0.113.1:6666","internalAddress":"10.219.77.14:6666","unknown":true}`,
 		`{} {}`, strings.Repeat(" ", 32769),
 	} {
 		if _, err := parsePublicGoServer(raw); err == nil {
@@ -46,7 +46,7 @@ func TestPublicGoServerConfiguration(t *testing.T) {
 
 func TestPublicGoServerRetriesInternalAfterFallbackCacheExpires(t *testing.T) {
 	selector := newGatewaySelector("http://127.0.0.1:1")
-	selector.preferred = &gatewayEndpoint{ID: "internal", Address: "https://203.0.113.1:6666", dialAddress: "192.0.2.14:6666"}
+	selector.preferred = &gatewayEndpoint{ID: "internal", Address: "https://203.0.113.1:6666", dialAddress: "10.219.77.14:6666"}
 	now := time.Now()
 	selector.now = func() time.Time { return now }
 	reachable, discoveries := false, 0
@@ -75,7 +75,7 @@ func TestPublicGoServerRetriesInternalAfterFallbackCacheExpires(t *testing.T) {
 func TestPublicGoServerPreferredBeforeDiscoveryAndFallsBack(t *testing.T) {
 	for _, reachable := range []bool{true, false} {
 		t.Run(map[bool]string{true: "internal", false: "competition"}[reachable], func(t *testing.T) {
-		preferred := gatewayEndpoint{ID: "internal", Address: "https://203.0.113.1:6666", dialAddress: "192.0.2.14:6666"}
+		preferred := gatewayEndpoint{ID: "internal", Address: "https://203.0.113.1:6666", dialAddress: "10.219.77.14:6666"}
 			selector := newGatewaySelector("http://127.0.0.1:1")
 			selector.preferred = &preferred
 			discoveries, probes := 0, 0

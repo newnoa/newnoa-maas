@@ -15,7 +15,7 @@ func TestEndpointIPRejectsNonLANAndAcceptsPrivateIPv4(t *testing.T) {
 			t.Fatalf("accepted %q", value)
 		}
 	}
-	for _, value := range []string{"127.0.0.1", "192.168.1.8", "192.0.2.14", "172.16.0.2"} {
+	for _, value := range []string{"127.0.0.1", "192.168.1.8", "10.219.77.14", "172.16.0.2"} {
 		if !validEndpointIP(value) {
 			t.Fatalf("rejected %q", value)
 		}

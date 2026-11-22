@@ -15,7 +15,7 @@
 <p align="center"><strong>模型即服务</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-v0.1.87-blue?style=flat" alt="version v0.1.87">
+  <img src="https://img.shields.io/badge/version-v0.4.0--beta-blue?style=flat" alt="version v0.4.0-beta">
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-999999?style=flat" alt="platform Windows | macOS | Linux">
   <img src="https://img.shields.io/badge/built%20with-Electron-orange?style=flat" alt="built with Electron">
 </p>

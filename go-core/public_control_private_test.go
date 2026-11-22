@@ -48,7 +48,7 @@ func TestDesktopRemoteHelpersStillRejectPrivateHTTPControl(t *testing.T) {
 }
 
 func TestPublicControlRemoteHelpersRejectInvalidOriginAfterConstruction(t *testing.T) {
-	for _, origin := range []string{"http://8.8.8.8:8090", "http://api.invalid:8090", "http://169.254.1.2:8090", "http://[fe80::2]:8090", "http://10.0.0.2:8090?", "http://user@10.0.0.2:8090"} {
+	for _, origin := range []string{"http://8.8.8.8:8090", "http://api.invalid:8090", "http://169.254.1.2:8090", "http://[fe80::2]:8090", "http://10.219.77.28:8090?", "http://user@10.219.77.28:8090"} {
 		c := &core{control: origin, publicStateless: true}
 		if c.controlRemote(context.Background(), "/me", "Bearer caller", nil, nil) == nil {
 			t.Fatalf("public user control accepted unsafe origin %s", origin)

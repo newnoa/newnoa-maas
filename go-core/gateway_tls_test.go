@@ -39,7 +39,7 @@ func gatewayTLSFixture(t *testing.T, handler http.Handler, wrongName bool) (*htt
 	}
 	leaf := &x509.Certificate{SerialNumber: big.NewInt(2), Subject: pkix.Name{CommonName: "gateway"}, NotBefore: time.Now().Add(-time.Hour), NotAfter: time.Now().Add(time.Hour), ExtKeyUsage: []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth}, KeyUsage: x509.KeyUsageDigitalSignature, IPAddresses: []net.IP{net.ParseIP("127.0.0.1")}}
 	if wrongName {
-		leaf.IPAddresses = []net.IP{net.ParseIP("10.0.0.1")}
+		leaf.IPAddresses = []net.IP{net.ParseIP("192.0.2.14")}
 	}
 	leafDER, err := x509.CreateCertificate(rand.Reader, leaf, cert, pub, key)
 	if err != nil {

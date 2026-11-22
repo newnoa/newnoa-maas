@@ -1,15 +1,15 @@
 # NEWNOA Go Server
 
-Go Server is the server-side transport and forwarding runtime used by NEWNOA. It contains the gateway, owner and network implementations in one public component.
+Go Server handles server-side connections and request forwarding for NEWNOA.
 
 ## Build
 
-Build each Go Server module independently.
+From this directory, build the Go Server modules with Go.
 
 ```sh
-(cd gateway && go build ./...)
-(cd owner && go build ./...)
-(cd network && go build ./...)
+for manifest in ./*/go.mod; do
+  go -C "${manifest%/go.mod}" build ./... || exit 1
+done
 ```
 
-Runtime addresses, certificates, upstream policy and credentials are supplied through environment variables. The public source contains no deployment credentials or private infrastructure configuration.
+Supply your own service addresses, certificates and credentials at deployment time.

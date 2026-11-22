@@ -328,11 +328,11 @@ func TestGatewaySelectorSkipsUnreachableAndFallsBackWhenDiscoveryFails(t *testin
 	selector := gatewaySelector{
 		now: func() time.Time { return now },
 		discover: func(context.Context, string, string) ([]gatewayEndpoint, error) {
-			return []gatewayEndpoint{{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "10.0.0.1:18091"}, {ID: "bbbbbbbb-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "10.0.0.2:18091"}}, nil
+			return []gatewayEndpoint{{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "192.0.2.14:18091"}, {ID: "bbbbbbbb-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "192.0.2.28:18091"}}, nil
 		},
 		probe: func(_ context.Context, endpoint gatewayEndpoint) (time.Duration, error) {
 			probed.Add(1)
-			if endpoint.Address == "10.0.0.1:18091" {
+			if endpoint.Address == "192.0.2.14:18091" {
 				return 0, errors.New("unreachable")
 			}
 			return 10 * time.Millisecond, nil
@@ -358,10 +358,10 @@ func TestGatewaySelectorSkipsUnreachableAndFallsBackWhenDiscoveryFails(t *testin
 func TestValidGatewayEndpointRejectsPublicOrMalformedAddresses(t *testing.T) {
 	for _, endpoint := range []gatewayEndpoint{
 		{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "203.0.113.10:18091"},
-		{ID: "gateway/invalid", Address: "10.0.0.2:18091"},
-		{ID: strings.Repeat("a", 81), Address: "10.0.0.2:18091"},
+		{ID: "gateway/invalid", Address: "10.219.77.28:18091"},
+		{ID: strings.Repeat("a", 81), Address: "10.219.77.28:18091"},
 		{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "gateway.example:18091"},
-		{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "10.0.0.2:0"},
+		{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "10.219.77.28:0"},
 	} {
 		if validGatewayEndpoint(endpoint) {
 			t.Fatalf("accepted unsafe endpoint %#v", endpoint)
@@ -377,7 +377,7 @@ func TestGatewaySelectorDiscoveryUsesCurrentUserKeyAndCachesProbeResult(t *testi
 			if key != "nn_"+strings.Repeat("x", 40) {
 				t.Fatalf("discovery got unexpected authorization key %q", key)
 			}
-			return []gatewayEndpoint{{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "10.0.0.1:18091"}}, nil
+			return []gatewayEndpoint{{ID: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", Address: "192.0.2.14:18091"}}, nil
 		},
 		probe: func(context.Context, gatewayEndpoint) (time.Duration, error) {
 			probes++

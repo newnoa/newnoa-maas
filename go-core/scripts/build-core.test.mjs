@@ -16,7 +16,7 @@ test('release build stamps the binary and manifest with the same validated versi
    if(version===undefined)delete process.env.NEWNOA_RELEASE_VERSION;else process.env.NEWNOA_RELEASE_VERSION=version;
    commands.length=0;written.clear();
    await import(`./build-core.mjs?test=${run++}`);
-   const expected=version??'0.1.0';
+   const expected=version??'0.4.1';
    assert.equal(commands[0][commands[0].indexOf('-ldflags')+1],`-X main.buildVersion=${expected}`);
    const manifest=JSON.parse([...written].find(([file])=>file.endsWith('core-manifest.json'))[1]);
    assert.equal(manifest.version,expected);assert.equal(manifest.protocol,1);

@@ -269,3 +269,77 @@ func TestRemoteHermesSeedsFreshProfileFromSiblingCatalog(t *testing.T) {
 		t.Fatalf("existing cache was overwritten: %v", err)
 	}
 }
+
+func TestRemoteHermesPinnedVersionByHostPlatform(t *testing.T) {
+	for platform, want := range map[string]string{"linux": "0.23.1", "windows": "0.23.2", "darwin": "0.23.2", "freebsd": ""} {
+		if got := remoteHermesPinnedVersion(platform); got != want {
+			t.Errorf("%s version = %q, want %q", platform, got, want)
+		}
+	}
+}
+
+func TestRemoteHermesVersionRejectsUnusableOutput(t *testing.T) {
+	missing := exec.Command(filepath.Join(t.TempDir(), "missing-hermes"))
+	if line, err := remoteHermesVersionLine(missing); err == nil || len(line) != 0 {
+		t.Fatalf("missing executable returned %q, %v", line, err)
+	}
+	if runtime.GOOS == "windows" {
+		return
+	}
+	for _, output := range []string{"Hermes without newline", string(bytes.Repeat([]byte("x"), 121)) + "\n"} {
+		cmd := exec.Command("/bin/sh", "-c", `printf '%s' "$1"`, "fixture", output)
+		if line, err := remoteHermesVersionLine(cmd); err == nil || len(line) != 0 {
+			t.Fatalf("invalid version output was accepted: %q", line)
+		}
+	}
+}
+
+func TestRemoteHermesLeavesFreshProfileEmptyWithoutUsableCatalog(t *testing.T) {
+	for _, tc := range []struct {
+		name string
+		body string
+	}{
+		{"absent", ""},
+		{"invalid-json", "{not-json}"},
+		{"wrong-shape", "[1, 2, 3]"},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			root := t.TempDir()
+			target := filepath.Join(root, "hermes", "fresh")
+			old := filepath.Join(root, "hermes", "old")
+			for _, dir := range []string{old, target} {
+				if err := os.MkdirAll(dir, 0700); err != nil {
+					t.Fatal(err)
+				}
+			}
+			const name = "models_dev_cache.json"
+			if tc.body != "" {
+				if err := os.WriteFile(filepath.Join(old, name), []byte(tc.body), 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+			seedRemoteHermesCatalog(root, target)
+			if _, err := os.Stat(filepath.Join(target, name)); !os.IsNotExist(err) {
+				t.Fatalf("unexpected destination cache state: %v", err)
+			}
+		})
+	}
+}
+
+func TestRemoteHermesCatalogStaysWithinStateDirectory(t *testing.T) {
+	root, other := t.TempDir(), t.TempDir()
+	source, target := filepath.Join(other, "source"), filepath.Join(other, "target")
+	for _, dir := range []string{source, target} {
+		if err := os.Mkdir(dir, 0700); err != nil {
+			t.Fatal(err)
+		}
+	}
+	const name = "models_dev_cache.json"
+	if err := os.WriteFile(filepath.Join(source, name), []byte(`{"models":{}}`), 0600); err != nil {
+		t.Fatal(err)
+	}
+	seedRemoteHermesCatalog(root, target)
+	if _, err := os.Stat(filepath.Join(target, name)); !os.IsNotExist(err) {
+		t.Fatalf("cache copied outside the account directory: %v", err)
+	}
+}

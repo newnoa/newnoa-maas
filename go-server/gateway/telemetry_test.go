@@ -208,7 +208,7 @@ func TestTelemetryExportsCorrelatedLogsOverOTLP(t *testing.T) {
 	}
 	for key, expected := range map[string]string{
 		"service.namespace": "newnoa", "service.name": "newnoa-gateway",
-		"service.version": "0.1.0", "deployment.environment.name": "integration",
+		"service.version": "0.4.1", "deployment.environment.name": "integration",
 	} {
 		if resourceAttributes[key] != expected {
 			t.Fatalf("resource %s = %q, want %q; all=%v", key, resourceAttributes[key], expected, resourceAttributes)

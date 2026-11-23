@@ -77,7 +77,9 @@ func (t *CallTiming) Observe(data []byte, stream bool, now time.Time) {
 			t.pending = nil
 			return
 		}
-		if HasCallOutput(t.pending) {
+		// HasCallOutput accepts JSON objects. Skip decoding unfinished chunks.
+		tail := bytes.TrimRight(data, " \t\r\n")
+		if len(tail) > 0 && tail[len(tail)-1] == '}' && HasCallOutput(t.pending) {
 			t.First = &now
 			t.pending = nil
 		}

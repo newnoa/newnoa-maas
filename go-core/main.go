@@ -32,7 +32,7 @@ import (
 
 const maxFrame = 1 << 20
 
-var buildVersion = "0.4.6"
+var buildVersion = "0.4.7"
 
 func inferenceRequestLimit(path string) int64 {
 	path = strings.TrimPrefix(path, "/evaluation")

@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {buildTool,goToolchain} from './build-tools.mjs';
-const version=process.env.NEWNOA_RELEASE_VERSION??'0.4.1';
+const version=process.env.NEWNOA_RELEASE_VERSION??'0.4.6';
 if(!/^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$/.test(version))throw new Error('NEWNOA_RELEASE_VERSION must be a numeric SemVer version');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');mkdirSync(path.join(root,'bin'),{recursive:true});
 const goos={linux:'linux',darwin:'darwin',win32:'windows'}[process.platform];

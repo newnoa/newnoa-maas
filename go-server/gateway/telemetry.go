@@ -65,7 +65,7 @@ func initTelemetry(service string) (func(), error) {
 		return nil, err
 	}
 	res, err := resource.Merge(resource.NewWithAttributes("",
-		attribute.String("service.version", "0.4.1"),
+		attribute.String("service.version", "0.4.6"),
 		attribute.String("deployment.environment.name", environment),
 	), envResource)
 	if err != nil {

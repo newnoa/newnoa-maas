@@ -13,7 +13,7 @@
 <h3 align="center">MaaS · Model as a Service</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-v0.4.1--beta-blue?style=flat" alt="version v0.4.1-beta">
+  <img src="https://img.shields.io/badge/version-v0.4.6--beta-blue?style=flat" alt="version v0.4.6-beta">
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-999999?style=flat" alt="platform Windows | macOS | Linux">
   <img src="https://img.shields.io/badge/built%20with-Electron-orange?style=flat" alt="built with Electron">
 </p>

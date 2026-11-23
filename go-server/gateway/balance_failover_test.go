@@ -172,16 +172,16 @@ func TestGatewayBalanceRejectionRetriesOnceBeforeWritingResponse(t *testing.T) {
 	}
 }
 
-func TestFastAITokenBalanceRejectionUsesExactTopLevelCode(t *testing.T) {
-	rules, err := parseBalanceRules(`[{"origin":"https://www.fastaitoken.com","status":403,"code":"INSUFFICIENT_BALANCE","codeField":"code"}]`)
+func TestSupplierBalanceRejectionUsesExactTopLevelCode(t *testing.T) {
+	rules, err := parseBalanceRules(`[{"origin":"https://supplier.example.test","status":403,"code":"INSUFFICIENT_BALANCE","codeField":"code"}]`)
 	if err != nil {
 		t.Fatal(err)
 	}
-	const endpoint = "https://www.fastaitoken.com/v1/responses"
+	const endpoint = "https://supplier.example.test/v1/responses"
 	const observed = `{"code":"INSUFFICIENT_BALANCE","message":"Insufficient account balance"}`
 	headers := http.Header{"Content-Type": {"application/json; charset=utf-8"}}
 	if code := rules.match(endpoint, 403, headers, []byte(observed)); code != "INSUFFICIENT_BALANCE" {
-		t.Fatalf("recorded FastAIToken refusal matched %q", code)
+		t.Fatalf("configured supplier refusal matched %q", code)
 	}
 	for _, test := range []struct {
 		status int
@@ -198,6 +198,6 @@ func TestFastAITokenBalanceRejectionUsesExactTopLevelCode(t *testing.T) {
 		}
 	}
 	if code := rules.match("https://apiking.ai/v1/responses", 403, headers, []byte(observed)); code != "" {
-		t.Fatalf("other supplier matched FastAIToken rule: %q", code)
+		t.Fatalf("other supplier matched configured rule: %q", code)
 	}
 }

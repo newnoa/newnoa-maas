@@ -33,6 +33,7 @@
 <p align="center">
   <strong>🚀 手机也能 Vibe Coding · 跨电脑继续同一智能体会话</strong>
 </p>
+<p align="center">让闲置的 Android 手机跑小模型，给工作电脑腾出内存。工单分流、语音转文字，都可以交给手机。</p>
 
 <h3 align="center">🌐 官方网站：<a href="https://newnoa.com">newnoa.com</a></h3>
 

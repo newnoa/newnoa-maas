@@ -31,6 +31,7 @@
 <p align="center">
   <strong>🚀 Vibe Coding from your phone · Continue the same agent session across computers</strong>
 </p>
+<p align="center">Put a spare Android phone to work routing support tickets or transcribing voice notes, and leave more memory free on your computer.</p>
 
 <h3 align="center">🌐 Official website: <a href="https://newnoa.com">newnoa.com</a></h3>
 
